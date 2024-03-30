@@ -3,7 +3,12 @@ import { useGeolocation } from "./useGeolocation";
 
 export default function App() {
     const [countClicks, setCountClicks] = useState(0);
-    const { isLoading, lat, lng, error, getPosition } = useGeolocation();
+    const {
+        isLoading,
+        position: { lat, lng },
+        error,
+        getPosition,
+    } = useGeolocation();
 
     function handleClicksCount() {
         setCountClicks((count) => count + 1);

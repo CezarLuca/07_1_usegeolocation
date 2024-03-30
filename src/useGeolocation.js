@@ -5,7 +5,7 @@ export function useGeolocation() {
     const [position, setPosition] = useState({});
     const [error, setError] = useState(null);
 
-    const { lat, lng } = position;
+    // const { lat, lng } = position;
 
     function getPosition() {
         if (!navigator.geolocation)
@@ -27,5 +27,5 @@ export function useGeolocation() {
         );
     }
 
-    return { isLoading, lat, lng, error, getPosition };
+    return { isLoading, position, error, getPosition };
 }
